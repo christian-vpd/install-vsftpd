@@ -1,6 +1,6 @@
 # Install VSFTPD
 
-> *Last Updated: Feb, 27, 2026 - Friday*
+> *Last Updated: Feb, 28, 2026 - Saturday*
 >
 >*Created by: Christian*
 
@@ -378,7 +378,7 @@ sudo crontab -e
 Then write the following code:
 
 ```bash
--/10 * * * * rsync -aAX --delete /srv/ftp/ /srv/ftp_mirror/
+*/10 * * * * rsync -aAX --delete /srv/ftp/ /srv/ftp_mirror/
 ```
 
 The save it, now it will trigger every hour to sync.
@@ -396,5 +396,6 @@ sudo rsync -aAX --delete /srv/ftp_mirror/Admin/ /srv/ftp/Admin/
 # Return the permissions
 sudo chomod 770 /srv/ftp/Admin
 ```
+
 
 It's important to select one folder only to avoid recover old and loss the new files on other folder.
